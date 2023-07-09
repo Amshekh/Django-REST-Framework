@@ -1,0 +1,14 @@
+To stop users from creating, updating and deleting the information, goto settings.py file of the project and add followingpermissions
+After adding these the normal user has only Read-Only permission.
+Only admin can perform all CRUD operations(i.e. CREATE, READ, UPDATE, DELETE  either companies or employees)
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
